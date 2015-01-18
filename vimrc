@@ -2,6 +2,39 @@ set nocompatible
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 filetype off
+set number
+
+syntax on
+
+set autoindent
+
+set backspace=indent,eol,start
+
+set wrapscan
+set showmatch
+
+set formatoptions+=mM
+
+set shiftwidth=3
+set tabstop=3
+
+" The prefix key.
+nnoremap	[Tag]	<Nop>
+nmap	t	[Tag]
+" Tab jump
+for n in range(1, 9)
+	execute 'nnoremap <silent> [Tag]'.n ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1で1番タブ、t2で2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+"tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+"tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+"tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+"tp 前のタブ
 
 "------------------------------
 " Start Neobundle Settings.
@@ -48,21 +81,6 @@ NeoBundleCheck
 "------------------------------
 
 
-set number
-
-syntax on
-
-set autoindent
-
-set backspace=indent,eol,start
-
-set wrapscan
-set showmatch
-
-set formatoptions+=mM
-
-set shiftwidth=3
-set tabstop=3
 
 
 "------------------------------
