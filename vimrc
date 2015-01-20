@@ -6,7 +6,7 @@ set number
 
 syntax on
 
-set autoindent
+" set autoindent
 
 set backspace=indent,eol,start
 
@@ -67,6 +67,11 @@ NeoBundle 'Lokaltog/vim-powerline'
 
 " Neocomplcache
 NeoBundle 'shougo/neocomplcache'
+
+" caw(comment out plugin)
+NeoBundle 'tyru/caw.vim.git'
+nmap <C-k> <Plug>(caw:I:toggle)
+vmap <C-k> <Plug>(caw:I:toggle)
 
 call neobundle#end()
 
