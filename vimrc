@@ -68,6 +68,10 @@ NeoBundle 'Lokaltog/vim-powerline'
 " Neocomplcache
 NeoBundle 'shougo/neocomplcache'
 
+" indentLine
+NeoBundle 'Yggdroot/indentLine'
+set list listchars=tab:\|\ 
+
 " caw(comment out plugin)
 NeoBundle 'tyru/caw.vim.git'
 nmap <C-k> <Plug>(caw:I:toggle)
