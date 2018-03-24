@@ -12,18 +12,22 @@ set backspace=indent,eol,start
 
 set wrapscan
 set showmatch
+set hlsearch
 
 set formatoptions+=mM
 
-set shiftwidth=3
-set tabstop=3
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
+colorscheme molokai
 
 " The prefix key.
 nnoremap	[Tag]	<Nop>
 nmap	t	[Tag]
 " Tab jump
 for n in range(1, 9)
-	execute 'nnoremap <silent> [Tag]'.n ':<C-u>tabnext'.n.'<CR>'
+  execute 'nnoremap <silent> [Tag]'.n ':<C-u>tabnext'.n.'<CR>'
 endfor
 " t1で1番タブ、t2で2番目のタブにジャンプ
 
@@ -86,14 +90,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+  let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -159,8 +163,10 @@ let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 " indentLine インデント表示
-NeoBundle 'Yggdroot/indentLine'
-set list listchars=tab:\|\ 
+" NeoBundle 'Yggdroot/indentLine'
+" set list listchars=tab:\|\ 
+NeoBundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
 
 " caw(comment out plugin) コメントアウトプラグイン
 NeoBundle 'tyru/caw.vim.git'
@@ -203,14 +209,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+  let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
